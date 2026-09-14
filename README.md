@@ -7,14 +7,16 @@ hidden with CSS and the visible page is built from the snippets in this repo.
 
 | File | inPage location | Notes |
 | --- | --- | --- |
-| `header.html` | Settings → **custom_header** | Fonts, icons, favicon swap. Replaces the current Material Symbols `<link>`. |
-| `hero.html` | Homepage → **motive box** (`#box-custom-motive`) | Topbar + hero + trust strip. |
+| `hero.html` | Homepage → **motive box** (`#box-custom-motive`) | Icon font + preconnects + favicon swap, topbar, hero, trust strip. |
 | `home.html` | Homepage → **page content** (`<main>`) | All sections, contact form and the page script. |
 | `footer.html` | **Footer box** (`#box-custom-footer`) | Footer. |
 | `style.css` | **Style 3** (`/style/3/`) | The only stylesheet we own. Loads after the theme. |
+| `privacy-policy.html` | New page **Privacy policy**, slug `privacy-policy` | Linked from the form note and the footer. |
 
-Deploy = copy-paste each file into its inPage field. The files must be deployed together
-(the HTML uses classes that only exist in the new CSS).
+Deploy = copy-paste each file into its inPage field. The four homepage files must be deployed
+together (the HTML uses classes that only exist in the new CSS). inPage's `custom_header` is
+left alone (it is used for SEO); everything that would normally sit in `<head>` is at the top
+of `hero.html`.
 
 ## What the page script does (`home.html`, bottom)
 
@@ -37,10 +39,10 @@ No external libraries any more (PureCounter and the Booking.com affiliate script
 Fields sent to Make: `name`, `email`, `phone`, `address`, `message`, `contact_time`
 (honeypot), `form_time_ms`, `source`, `g-recaptcha-response`.
 
-## Make scenario "MARV Travel | Kontaktní formulář" – required filter update
+## Make scenario "MARV Travel | Kontaktní formulář" – filter (applied 14 Sep 2026)
 
-The scenario already calls `siteverify`, but the filter before the e-mail module only checks
-`success = true`. Add these conditions (AND):
+The scenario calls `siteverify`; the filter before the e-mail module now checks all of the
+following (AND). Reply-To is set to the sender, and the e-mail shows the reCAPTCHA score.
 
 | Field | Operator | Value |
 | --- | --- | --- |
@@ -48,8 +50,8 @@ The scenario already calls `siteverify`, but the filter before the e-mail module
 | `4.data.score` | number ≥ | `0.5` |
 | `4.data.action` | text equal | `submit` |
 | `4.data.hostname` | text equal | `www.marvtravel.com` |
-| `1.contact_time` | text is empty | |
-| `1.message` | length ≥ | `20` |
+| `1.contact_time` | does not exist (empty) | |
+| `length(1.message)` | number ≥ | `20` |
 
 Optional: a second route for "rejected" submissions that stores them in a Make data store, so
 you can review false positives for a few weeks.
