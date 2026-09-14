@@ -154,21 +154,12 @@ main {
   box-sizing: border-box;
 }
 
-.mt p,
-.mt ul,
-.mt ol,
-.mt h1,
-.mt h2,
-.mt h3,
-.mt h4,
-.mt figure,
-.mt address {
+:where(.mt) :is(p, ul, ol, h1, h2, h3, h4, figure, address) {
   margin: 0;
   padding: 0;
 }
 
-.mt ul,
-.mt ol {
+:where(.mt) :is(ul, ol) {
   list-style: none;
 }
 
@@ -437,8 +428,8 @@ section > .contain > .row.left {
 .g-2 { gap: var(--s-4); }
 .g-3 { gap: var(--s-5); }
 
-/* Margin */
-.m-0 { margin: 0; }
+/* Margin (declared with .mt scope too, so they beat Bootstrap's heading margins) */
+.m-0, .mt .m-0 { margin: 0; }
 .m-b-0 { margin-bottom: 0; }
 .m-b-sm { margin-bottom: var(--s-2); }
 .m-b-1 { margin-bottom: var(--s-4); }
@@ -655,11 +646,12 @@ section > .contain > .row.left {
   text-align: center;
 }
 
-/* Inside the page grid the icon tile simply fills its row (a stretched
-   aspect-ratio box would grow wider than its column on tablets). */
-.mt .grid-3 > .icon-tile.ratio-square {
+/* Inside the page grid a tile fills its row instead of keeping a 1:1 ratio:
+   a stretched aspect-ratio box grows wider than its column and overlaps the
+   neighbouring card (the portrait photo keeps its ratio via align-self). */
+.mt .grid-3 > .ratio-square:not(.circle) {
   aspect-ratio: auto;
-  min-height: 240px;
+  min-height: 260px;
 }
 
 .icon-big {
