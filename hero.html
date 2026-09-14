@@ -1,12 +1,44 @@
-<section id="hero" class="hero m-b-3">
+<!-- Topbar (site brand + anchors). The inPage header/navbar is hidden in CSS. -->
+<div class="mt topbar" id="mt-topbar">
+  <div class="contain topbar-inner">
+    <a href="/" class="brand" aria-label="MARV Travel – home">
+      <img src="/picture/3/marv-logo-jpg/" alt="" width="40" height="40">
+      <span class="brand-name">MARV<span>Travel</span></span>
+    </a>
+    <div class="topnav" role="navigation" aria-label="Main">
+      <a href="#about-us">About</a>
+      <a href="#focus">Services</a>
+      <a href="#team">Team</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <a href="#contact" class="button primary small">Plan my trip<span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span></a>
+  </div>
+</div>
+
+<!-- Hero -->
+<section id="hero" class="mt hero m-b-3">
   <div class="bento column">
     <div class="content left">
       <h1 class="m-b-1">Experience<br><span class="gradient text">Marv</span>ellous<br><span class="gradient text">Travel</span></h1>
-      <div class="row left">
-        <a href="#contact" class="button primary">Contact Us<span class="material-symbols-outlined m-l-1">arrow_forward</span></a>
+      <p class="hero-lead">Tailor-made journeys through Central Europe and around the world, designed by a Prague-based team with over 30&nbsp;years of experience.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="button primary">Plan your trip<span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span></a>
+        <a href="#focus" class="button ghost">Our services</a>
       </div>
     </div>
-    <image src="/picture/3/sky/"></image>
+    <img src="/picture/3/sky/" alt="" width="1920" height="1080" fetchpriority="high" decoding="async">
   </div>
-  <image src="/picture/3/plane/"></image>
+  <img class="hero-plane" src="/picture/3/plane/" alt="" width="1440" height="810" decoding="async">
 </section>
+
+<!-- Trust strip -->
+<div class="mt trust-strip m-b-3">
+  <div class="contain">
+    <ul>
+      <li><span class="material-symbols-outlined" aria-hidden="true">history</span><span><strong>30+ years of experience</strong>Tailor-made trips since the 1990s</span></li>
+      <li><span class="material-symbols-outlined" aria-hidden="true">verified</span><span><strong>Member of ACK ČR</strong>Association of Czech Travel Agencies</span></li>
+      <li><span class="material-symbols-outlined" aria-hidden="true">shield</span><span><strong>Fully insured</strong>Union Insurance, policy no. 11-65636</span></li>
+      <li><span class="material-symbols-outlined" aria-hidden="true">location_on</span><span><strong>Based in Prague</strong>Karlovo náměstí, Czech Republic</span></li>
+    </ul>
+  </div>
+</div>

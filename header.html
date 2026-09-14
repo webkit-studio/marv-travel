@@ -1,0 +1,44 @@
+<!--
+  Paste the whole content of this file into inPage → Settings → "custom_header"
+  (it replaces the current Material Symbols <link>). Nothing here depends on the
+  rest of the theme.
+-->
+
+<!-- Performance: open connections to the font/CDN hosts early -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<!-- Fonts (same families as in style.css; loading them here is faster than via CSS @import) -->
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Noto+Serif+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Google Material Symbols (icons) -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,300..600,0..1,0&display=block" rel="stylesheet">
+
+<!-- Brand colour for the mobile browser UI -->
+<meta name="theme-color" content="#ffffff">
+
+<!--
+  Favicon: inPage prints its own <link rel="shortcut icon"> AFTER this block, so a
+  plain <link rel="icon"> here would lose. The script below replaces it as soon as the
+  page is parsed. Upload a 512×512 PNG (the black "M" mark) to inPage pictures and set
+  the path below (e.g. /picture/3/favicon/).
+-->
+<script>
+  (function () {
+    var FAVICON = '/picture/3/marv-logo-jpg/'; // TODO: replace with the uploaded 512×512 PNG path
+    function swap() {
+      var old = document.querySelectorAll('link[rel~="icon"]');
+      for (var i = 0; i < old.length; i++) old[i].parentNode.removeChild(old[i]);
+      var l = document.createElement('link');
+      l.rel = 'icon';
+      l.href = FAVICON;
+      document.head.appendChild(l);
+      var a = document.createElement('link');
+      a.rel = 'apple-touch-icon';
+      a.href = FAVICON;
+      document.head.appendChild(a);
+    }
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', swap);
+    else swap();
+  })();
+</script>
