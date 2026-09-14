@@ -1,34 +1,115 @@
-<!-- About Us -->
+<!-- Structured data: TravelAgency entity (the theme only prints a generic Organization). -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TravelAgency",
+  "@id": "https://www.marvtravel.com/#travelagency",
+  "name": "MARV Travel, s.r.o.",
+  "alternateName": "MARV Travel",
+  "url": "https://www.marvtravel.com/",
+  "logo": "https://www.marvtravel.com/picture/3/marv-logo-jpg/",
+  "image": "https://www.marvtravel.com/picture/3/sky/",
+  "description": "Prague-based incoming travel partner for the Czech Republic and Central Europe: tailor-made programmes, hotels, transfers and guides for tour operators, travel agencies and corporate clients, plus outgoing journeys worldwide.",
+  "telephone": "+420777333950",
+  "email": "info@marvtravel.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Karlovo náměstí 290/16",
+    "addressLocality": "Praha 2",
+    "postalCode": "120 00",
+    "addressCountry": "CZ"
+  },
+  "geo": { "@type": "GeoCoordinates", "latitude": 50.0757, "longitude": 14.4197 },
+  "vatID": "CZ05557593",
+  "taxID": "05557593",
+  "areaServed": [
+    { "@type": "Country", "name": "Czech Republic" },
+    { "@type": "Country", "name": "Austria" },
+    { "@type": "Country", "name": "Hungary" },
+    { "@type": "Country", "name": "Slovakia" },
+    { "@type": "Country", "name": "Poland" },
+    { "@type": "Country", "name": "Germany" }
+  ],
+  "knowsLanguage": ["en", "cs"],
+  "memberOf": {
+    "@type": "Organization",
+    "name": "Asociace cestovních kanceláří České republiky (ACK ČR)",
+    "url": "https://www.ackcr.cz/"
+  },
+  "founder": {
+    "@type": "Person",
+    "name": "Jiří Svoboda",
+    "jobTitle": "Owner & CEO",
+    "sameAs": "https://www.linkedin.com/in/ji%C5%99%C3%AD-svoboda-02b34767/"
+  },
+  "sameAs": [
+    "https://www.ackcr.cz/clenove/?id=1962",
+    "https://www.linkedin.com/in/ji%C5%99%C3%AD-svoboda-02b34767/"
+  ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "sales",
+    "telephone": "+420777333950",
+    "email": "info@marvtravel.com",
+    "availableLanguage": ["English", "Czech"]
+  },
+  "makesOffer": [
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Incoming travel services in the Czech Republic and Central Europe",
+        "serviceType": "Destination management for tour operators, travel agencies and corporate clients",
+        "areaServed": "Central Europe"
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Outgoing tailor-made travel worldwide",
+        "serviceType": "Tailor-made holidays and business travel for private and corporate clients"
+      }
+    }
+  ]
+}
+</script>
+
+
+
+
+
+<!-- About -->
 <section id="about-us" class="mt m-b-6">
   <div class="contain">
     <div class="section-head">
-      <div><p class="section-label">About us</p></div>
+      <div><p class="section-label">About MARV Travel</p></div>
       <div class="section-body">
-        <h2>Tailored to Your Dreams</h2>
-        <p class="lead measure">We believe travel should transcend the ordinary. With more than 30 years of experience in tailor-made trips, our mission is to bring your dream destinations within reach – every detail designed around your tastes, interests and pace.</p>
+        <h2>Your Partner on the Ground in Central Europe</h2>
+        <p class="lead measure">MARV Travel is a Prague-based incoming travel company. We plan and operate tailor-made programmes for partners who send their clients to the Czech Republic and the neighbouring countries: tour operators, travel agencies, corporate and incentive planners. Private travellers get the same care on outgoing journeys anywhere in the world.</p>
       </div>
     </div>
 
-    <div class="about-grid">
-      <div class="bento big gradient stat ratio-square">
+    <div class="grid-3">
+      <div class="bento big gradient stat ratio-square col-2">
         <p class="stat-number"><span data-count="30" data-suffix="+">30+</span></p>
         <p class="stat-label">Years of experience</p>
       </div>
 
-      <div class="bento column left lift">
-        <h3 class="m-b-1">What you can expect</h3>
+      <div class="bento column left lift col-3">
+        <h3 class="m-b-1">How we work with partners</h3>
         <ul class="feature-list">
           <li>
-            <span class="icon-dot"><span class="material-symbols-outlined" aria-hidden="true">draw</span></span>
-            <span><strong>Designed around you</strong><span class="desc">No packages. Every itinerary starts from your wishes, pace and budget.</span></span>
+            <span class="icon-dot"><span class="material-symbols-outlined" aria-hidden="true">account_tree</span></span>
+            <span><strong>One contact for the whole programme</strong><span class="desc">Itinerary, hotels, transport, guides and experiences, coordinated by one team.</span></span>
           </li>
           <li>
-            <span class="icon-dot"><span class="material-symbols-outlined" aria-hidden="true">handshake</span></span>
-            <span><strong>Owner-led service</strong><span class="desc">You deal directly with Jiří and his team, from the first call until you are back home.</span></span>
+            <span class="icon-dot"><span class="material-symbols-outlined" aria-hidden="true">person_check</span></span>
+            <span><strong>Owner-led, detail-driven</strong><span class="desc">Jiří and his team handle every request personally, from the first quote to the last transfer.</span></span>
           </li>
           <li>
-            <span class="icon-dot"><span class="material-symbols-outlined" aria-hidden="true">public</span></span>
-            <span><strong>Central Europe and beyond</strong><span class="desc">Incoming trips to the heart of Europe and outgoing travel worldwide, with the same attention to detail.</span></span>
+            <span class="icon-dot"><span class="material-symbols-outlined" aria-hidden="true">verified_user</span></span>
+            <span><strong>Licensed and insured</strong><span class="desc">Tour operator licence, insolvency insurance and ACK ČR membership. References on request.</span></span>
           </li>
         </ul>
       </div>
@@ -40,30 +121,33 @@
 
 
 
-<!-- Our Focus -->
-<section id="focus" class="mt m-b-6">
+<!-- Services -->
+<section id="services" class="mt m-b-6">
   <div class="contain">
     <div class="section-head">
       <div><p class="section-label">Our services</p></div>
       <div class="section-body">
-        <h2>Central Europe &amp;&nbsp;Beyond</h2>
-        <p class="lead measure">Dive into the heart of Central Europe or venture to global destinations with us. Our dual expertise in incoming and outgoing travel means personalised journeys that match your spirit of adventure.</p>
+        <h2>Incoming &amp;&nbsp;Outgoing Travel</h2>
+        <p class="lead measure">Two lines of business, one standard of care. We know the hotels, the guides and the roads, and we answer personally.</p>
       </div>
     </div>
 
-    <div class="row left m-b-1">
-      <div class="bento column left w-66 m-r-1 lift">
-        <h3 class="m-b-1">Incoming Travel</h3>
-        <p class="muted">Discover Central Europe's hidden gems, from the historic streets of Prague to the majestic peaks of Slovakia. Each trip is a deep dive into the region's rich heritage and breathtaking landscapes – with private guides, hand-picked hotels and seamless transfers.</p>
+    <div class="grid-3 m-b-1">
+      <div class="bento column left span-2 lift">
+        <h3 class="m-b-1">Incoming travel to Central Europe</h3>
+        <p class="muted">Destination services for tour operators, travel agencies and companies: tailor-made itineraries for groups and individual travellers, hotel booking, private transfers and limousine service, licensed guides, sightseeing, gastronomy and cultural experiences, corporate events and incentives. From Prague across the Czech Republic to Vienna, Budapest, Bratislava and Kraków.</p>
+        <div class="chips" aria-label="Destinations">
+          <span class="chip">Prague</span><span class="chip">Český Krumlov</span><span class="chip">Karlovy Vary</span><span class="chip">Brno</span><span class="chip">Vienna</span><span class="chip">Budapest</span><span class="chip">Bratislava</span><span class="chip">Kraków</span><span class="chip">Dresden</span>
+        </div>
       </div>
-      <div class="bento icon-tile column center w-33 ratio-square mobile-hide" aria-hidden="true"><span class="material-symbols-outlined icon-big gradient text">explore</span></div>
+      <div class="bento icon-tile column center ratio-square mobile-hide" aria-hidden="true"><span class="material-symbols-outlined icon-big gradient text">explore</span></div>
     </div>
 
-    <div class="row left">
-      <div class="bento icon-tile column center w-33 ratio-square m-r-1 mobile-hide" aria-hidden="true"><span class="material-symbols-outlined icon-big gradient text">airplane_ticket</span></div>
-      <div class="bento column left w-66 lift">
-        <h3 class="m-b-1">Outgoing Travel</h3>
-        <p class="muted">Ready for a world tour? From the tranquil beaches of Thailand to the vibrant cities of Europe, we tailor your adventure to match your dreams. Explore more, worry less.</p>
+    <div class="grid-3">
+      <div class="bento icon-tile column center ratio-square mobile-hide" aria-hidden="true"><span class="material-symbols-outlined icon-big gradient text">airplane_ticket</span></div>
+      <div class="bento column left span-2 lift">
+        <h3 class="m-b-1">Outgoing travel worldwide</h3>
+        <p class="muted">For private and corporate clients: tailor-made holidays and business trips anywhere in the world. Flights, hotels, itineraries and support while you are away, arranged by people you can call.</p>
       </div>
     </div>
   </div>
@@ -79,26 +163,26 @@
     <div class="section-head">
       <div><p class="section-label">How it works</p></div>
       <div class="section-body">
-        <h2>From First Idea to Boarding Pass</h2>
-        <p class="lead measure">Three simple steps. You share the vision, we take care of everything else.</p>
+        <h2>From Request to Operation</h2>
+        <p class="lead measure">Three steps from your first e-mail to a programme running on the ground.</p>
       </div>
     </div>
 
-    <div class="steps">
+    <div class="grid-3">
       <div class="bento step lift">
         <span class="step-no gradient text">01</span>
-        <h3>Share your wishes</h3>
-        <p>Tell us where, when, with whom and what you love. A short message or a phone call is enough to get started.</p>
+        <h3>Send your request</h3>
+        <p>Dates, number of travellers, destinations and budget. A short e-mail or a phone call is enough.</p>
       </div>
       <div class="bento step lift">
         <span class="step-no gradient text">02</span>
         <h3>Receive a tailored proposal</h3>
-        <p>We design the itinerary, hotels, transport and experiences, then refine every detail together with you.</p>
+        <p>A complete programme with hotels, transport, guides and a clear quote, refined together with you.</p>
       </div>
       <div class="bento step lift">
         <span class="step-no gradient text">03</span>
-        <h3>Travel with peace of mind</h3>
-        <p>Everything is booked and confirmed. We stay reachable throughout your journey, whenever you need us.</p>
+        <h3>We operate, you relax</h3>
+        <p>Confirmed bookings, one point of contact and support on the ground for the whole stay.</p>
       </div>
     </div>
   </div>
@@ -112,10 +196,10 @@
 <section id="gallery" class="mt m-b-6">
   <div class="contain m-b-2">
     <div class="section-head m-b-0">
-      <div><p class="section-label">Gallery</p></div>
+      <div><p class="section-label">Destinations</p></div>
       <div class="section-body">
-        <h2>Showcasing Our Expertise</h2>
-        <p class="lead measure">A glimpse of the journeys we have crafted. Each photograph captures a unique story of exploration and exceptional experiences.</p>
+        <h2>Where We Take Your Clients</h2>
+        <p class="lead measure">A glimpse of journeys we have designed and operated, in Central Europe and beyond.</p>
       </div>
     </div>
   </div>
@@ -146,25 +230,25 @@
 
 
 
-<!-- Meet the Team -->
+<!-- Team -->
 <section id="team" class="mt m-b-6">
   <div class="contain">
     <div class="section-head">
-      <div><p class="section-label">Meet the team</p></div>
+      <div><p class="section-label">Team</p></div>
       <div class="section-body">
-        <h2>Behind the Scenes</h2>
-        <p class="lead measure">At the heart of our service is a small, dedicated team of travel experts led by Jiří Svoboda. With a passion for exploration and a commitment to excellence, we bring your travel plans to life.</p>
+        <h2>The People Behind the Programmes</h2>
+        <p class="lead measure">A small, experienced team led by Jiří Svoboda. Your requests are answered by the people who will also run your programme.</p>
       </div>
     </div>
 
-    <div class="row left">
-      <div class="bento column left w-66 m-r-1">
+    <div class="grid-3">
+      <div class="bento column left span-2">
         <h3 class="m-b-sm">Ing. Jiří Svoboda</h3>
         <p class="role m-b-1">Owner &amp; CEO</p>
-        <p class="muted m-b-1">Sales manager and team leader in a Czech incoming and limousine agency for over 25&nbsp;years, Jiří later expanded into outgoing travel. He is dedicated to meeting the expectations and wishes of every client personally.</p>
+        <p class="muted m-b-1">Sales manager and team leader in a Czech incoming and limousine agency for over 25&nbsp;years, Jiří later expanded into outgoing travel. He is dedicated to meeting the expectations and wishes of every client and partner personally.</p>
         <a href="https://www.linkedin.com/in/ji%C5%99%C3%AD-svoboda-02b34767/" class="button secondary" target="_blank" rel="noopener">LinkedIn profile<span class="material-symbols-outlined" aria-hidden="true">arrow_outward</span></a>
       </div>
-      <div class="bento column w-33 ratio-square circle gradient">
+      <div class="bento column ratio-square circle gradient">
         <img src="/picture/3/jiri-svoboda/" alt="Portrait of Jiří Svoboda, owner and CEO of MARV Travel" width="1080" height="1080" loading="lazy" decoding="async">
       </div>
     </div>
@@ -175,28 +259,28 @@
 
 
 
-<!-- Testimonials (hidden until real quotes are available: remove the class "hide" and replace the placeholders) -->
+<!-- Partner references (hidden until real quotes are available: remove the class "hide" and replace the placeholders) -->
 <section id="testimonials" class="mt m-b-6 hide">
   <div class="contain">
     <div class="section-head">
-      <div><p class="section-label">Client stories</p></div>
+      <div><p class="section-label">Partner references</p></div>
       <div class="section-body">
-        <h2>What Our Travellers Say</h2>
-        <p class="lead measure">A few words from people who have travelled with us.</p>
+        <h2>What Our Partners Say</h2>
+        <p class="lead measure">A few words from agencies and companies we work with.</p>
       </div>
     </div>
-    <div class="steps">
+    <div class="grid-3">
       <figure class="bento quote lift">
-        <blockquote>“[Quote 1 – two or three sentences about the trip and the service.]”</blockquote>
-        <figcaption><strong>[Name]</strong><span>[City, Country] · [Trip, year]</span></figcaption>
+        <blockquote>“[Quote 1 – two or three sentences about the programme and the cooperation.]”</blockquote>
+        <figcaption><strong>[Name, position]</strong><span>[Company, country] · [Programme, year]</span></figcaption>
       </figure>
       <figure class="bento quote lift">
         <blockquote>“[Quote 2]”</blockquote>
-        <figcaption><strong>[Name]</strong><span>[City, Country] · [Trip, year]</span></figcaption>
+        <figcaption><strong>[Name, position]</strong><span>[Company, country] · [Programme, year]</span></figcaption>
       </figure>
       <figure class="bento quote lift">
         <blockquote>“[Quote 3]”</blockquote>
-        <figcaption><strong>[Name]</strong><span>[City, Country] · [Trip, year]</span></figcaption>
+        <figcaption><strong>[Name, position]</strong><span>[Company, country] · [Programme, year]</span></figcaption>
       </figure>
     </div>
   </div>
@@ -210,17 +294,17 @@
 <section id="contact" class="mt m-b-6">
   <div class="contain">
     <div class="section-head">
-      <div><p class="section-label">Contact us</p></div>
+      <div><p class="section-label">Contact</p></div>
       <div class="section-body">
-        <h2>Get in Touch</h2>
-        <p class="lead measure">Whether you'd like a custom itinerary, more information about our services or just have a question – tell us a little about your plans and we'll get back to you personally.</p>
+        <h2>Request a Proposal</h2>
+        <p class="lead measure">Tell us about the trip you are planning for your clients: dates, group size, destinations and the services you need. We will come back with a tailored proposal. Individual travellers are welcome too.</p>
       </div>
     </div>
 
-    <div class="contact-grid">
+    <div class="grid-3 contact-grid">
 
       <!-- Form -->
-      <div class="bento form-card column left">
+      <div class="bento form-card column left span-2">
         <div id="contact-form-wrap" class="w-100">
           <form class="form-grid" id="contact-form" action="#contact" method="post" novalidate>
             <div class="form-field">
@@ -230,7 +314,7 @@
 
             <div class="form-field">
               <label for="email">E-mail</label>
-              <input type="email" id="email" name="email" autocomplete="email" inputmode="email" required maxlength="160" placeholder="jane@example.com">
+              <input type="email" id="email" name="email" autocomplete="email" inputmode="email" required maxlength="160" placeholder="jane@agency.com">
             </div>
 
             <div class="form-field">
@@ -239,13 +323,13 @@
             </div>
 
             <div class="form-field">
-              <label for="address">Where are you based? <span class="optional">optional</span></label>
-              <input type="text" id="address" name="address" autocomplete="country-name" maxlength="120" placeholder="e.g. London, United Kingdom">
+              <label for="address">Company &amp; country <span class="optional">optional</span></label>
+              <input type="text" id="address" name="address" autocomplete="organization" maxlength="120" placeholder="e.g. Nordic Tours Ltd., Sweden">
             </div>
 
             <div class="form-field full">
-              <label for="message">Tell us about your trip</label>
-              <textarea id="message" name="message" required minlength="20" maxlength="4000" rows="5" placeholder="Destination, dates, number of travellers, interests, budget – anything that helps us plan."></textarea>
+              <label for="message">Tell us about the trip</label>
+              <textarea id="message" name="message" required minlength="20" maxlength="4000" rows="5" placeholder="Dates, number of travellers, destinations, services needed (hotels, transfers, guides, events), budget range."></textarea>
             </div>
 
             <!-- Honeypot: humans never see this field, bots fill it in. -->
@@ -259,8 +343,8 @@
             <input type="hidden" name="source" value="www.marvtravel.com/#contact">
 
             <div class="form-footer">
-              <button class="button primary" type="submit" id="submitButton"><span class="btn-label">Send enquiry</span><span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span></button>
-              <p class="form-note">You'll hear back from Jiří personally, usually within one business day. We use your details only to answer your enquiry (<a href="/privacy-policy/">privacy policy</a>). This site is protected by reCAPTCHA; the Google <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a> and <a href="https://policies.google.com/terms" target="_blank" rel="noopener">Terms of Service</a> apply.</p>
+              <button class="button primary" type="submit" id="submitButton"><span class="btn-label">Request a proposal</span><span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span></button>
+              <p class="form-note">You'll hear back from Jiří personally, usually within one business day. We use your details only to answer your request (<a href="#privacy" data-dialog="privacy-dialog">privacy policy</a>). This site is protected by reCAPTCHA; the Google <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a> and <a href="https://policies.google.com/terms" target="_blank" rel="noopener">Terms of Service</a> apply.</p>
             </div>
           </form>
           <noscript><p class="form-note m-t-1">The form needs JavaScript. You can also write to us at <a href="mailto:info@marvtravel.com">info@marvtravel.com</a>.</p></noscript>
@@ -270,7 +354,7 @@
       <!-- Details -->
       <div class="bento details-card column left">
         <div class="w-100">
-          <h3>Visit us</h3>
+          <h3>Office</h3>
           <address class="detail">
             <span class="material-symbols-outlined" aria-hidden="true">location_on</span>
             <span>MARV Travel, s.r.o.<br>Karlovo náměstí 290/16<br>120&nbsp;00 Prague&nbsp;2, Czech Republic</span>
@@ -307,6 +391,51 @@
 
 
 
+<!-- Privacy policy (dialog; inPage's plan does not allow another page) -->
+<dialog id="privacy-dialog" class="mt dialog" aria-labelledby="privacy-title">
+  <div class="dialog-inner prose">
+    <button type="button" class="dialog-close" data-dialog-close aria-label="Close"><span class="material-symbols-outlined" aria-hidden="true">close</span></button>
+    <p class="section-label">Privacy policy</p>
+    <h2 id="privacy-title">How we handle your personal data</h2>
+    <p>Last updated: 14 September 2026</p>
+
+    <h3>Who we are</h3>
+    <p>MARV Travel, s.r.o., Karlovo náměstí 290/16, 120 00 Prague 2, Czech Republic, Company ID (IČO) 05557593, is the controller of the personal data described here. You can reach us at <a href="mailto:info@marvtravel.com">info@marvtravel.com</a> or +420 777 333 950.</p>
+
+    <h3>What data we collect and why</h3>
+    <p><strong>Contact form.</strong> When you send a request we receive your name, e-mail address, message and, if you choose to provide them, your phone number and company or country. We use this information only to answer your request and to prepare a proposal. The legal basis is the performance of pre-contractual steps at your request (Art. 6(1)(b) GDPR) and our legitimate interest in responding to enquiries (Art. 6(1)(f) GDPR).</p>
+    <p><strong>Booking a programme or trip.</strong> If you become our client or partner, we process the data needed to arrange and deliver the services (for example traveller lists and passport details for airlines or hotels). We will tell you exactly what is needed at that point. The legal basis is the performance of our contract and our legal obligations as a travel company.</p>
+    <p><strong>Website use.</strong> The website uses cookies only with your consent, which you can give or change in the cookie settings at the bottom of the page. Strictly necessary cookies (session and your cookie preference) are always on.</p>
+    <p><strong>Spam protection.</strong> The contact form is protected by Google reCAPTCHA v3, which analyses browser signals to tell people from automated scripts. Google's <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a> and <a href="https://policies.google.com/terms" target="_blank" rel="noopener">Terms of Service</a> apply to this service.</p>
+
+    <h3>How long we keep it</h3>
+    <ul>
+      <li>Requests that do not lead to a booking: up to 12 months after our last exchange, so we can follow up on your plans.</li>
+      <li>Client, partner and booking records: for the duration of the contract and afterwards as long as Czech accounting and tax law requires (generally 10 years).</li>
+    </ul>
+
+    <h3>Who else sees your data</h3>
+    <p>We use trusted service providers to run the website and deliver our services. They process data only on our instructions:</p>
+    <ul>
+      <li>Make.com (Celonis, s.r.o., Czech Republic) – delivers form submissions to our mailbox.</li>
+      <li>Google LLC – reCAPTCHA spam protection and, if you consent, Google Analytics. Data may be transferred to the United States under the EU-US Data Privacy Framework.</li>
+      <li>inPage (hosting of this website, Czech Republic).</li>
+      <li>Hotels, transport, guide and insurance partners – only the data needed to deliver the services you book with us.</li>
+    </ul>
+    <p>We never sell your personal data.</p>
+
+    <h3>Your rights</h3>
+    <p>You have the right to access the data we hold about you, to have it corrected or deleted, to restrict or object to its processing, and to receive it in a portable format. Where processing is based on consent, you can withdraw it at any time. To exercise any of these rights, e-mail <a href="mailto:info@marvtravel.com">info@marvtravel.com</a>. You also have the right to lodge a complaint with the Czech Office for Personal Data Protection (Úřad pro ochranu osobních údajů, <a href="https://uoou.gov.cz" target="_blank" rel="noopener">uoou.gov.cz</a>).</p>
+
+    <h3>Changes to this policy</h3>
+    <p>We may update this text when our services or the law change. The date at the top shows the latest version.</p>
+  </div>
+</dialog>
+
+
+
+
+
 <!-- Discover & Book (hidden until the affiliate partnerships are live) -->
 <section id="book" class="mt m-b-6 hide">
   <div class="contain">
@@ -314,21 +443,21 @@
       <div><p class="section-label">Discover &amp;&nbsp;Book</p></div>
       <div class="section-body">
         <h2>Your Journey, Simplified</h2>
-        <p class="lead measure">Embark on your next adventure with ease. Whether you're looking for the perfect stay or the best flights, we've partnered with industry leaders to bring you exclusive deals and seamless booking experiences.</p>
+        <p class="lead measure">Looking for the right stay or the best flights? We have partnered with industry leaders to bring you exclusive deals and straightforward booking.</p>
       </div>
     </div>
-    <div class="row left m-b-1">
-      <div class="bento column left w-66 m-r-1 lift">
-        <h3 class="m-b-1">Find Your Perfect Stay</h3>
+    <div class="grid-3 m-b-1">
+      <div class="bento column left span-2 lift">
+        <h3 class="m-b-1">Find your perfect stay</h3>
         <p class="muted m-b-1">Experience comfort and quality with Booking.com. Discover accommodation that caters to your every need, from luxury resorts to cosy local stays.</p>
         <a href="https://www.booking.com?aid=1746040" class="button secondary" target="_blank" rel="noopener">See offers<span class="material-symbols-outlined" aria-hidden="true">arrow_outward</span></a>
       </div>
-      <div class="bento icon-tile column center w-33 ratio-square mobile-hide" aria-hidden="true"><span class="material-symbols-outlined icon-big gradient text">king_bed</span></div>
+      <div class="bento icon-tile column center ratio-square mobile-hide" aria-hidden="true"><span class="material-symbols-outlined icon-big gradient text">king_bed</span></div>
     </div>
-    <div class="row left">
-      <div class="bento icon-tile column center w-33 ratio-square m-r-1 gradient mobile-hide" aria-hidden="true"><span class="material-symbols-outlined icon-big text-light">travel</span></div>
-      <div class="bento column left w-66 lift">
-        <h3 class="m-b-1">Fly with Confidence</h3>
+    <div class="grid-3">
+      <div class="bento icon-tile column center ratio-square gradient mobile-hide" aria-hidden="true"><span class="material-symbols-outlined icon-big text-light">travel</span></div>
+      <div class="bento column left span-2 lift">
+        <h3 class="m-b-1">Fly with confidence</h3>
         <p class="muted m-b-1">Take to the skies with Letuška.cz. Find top deals on flights to destinations worldwide. Whether it's a quick getaway or a long-awaited expedition, your ideal flight awaits.</p>
         <a href="https://www.letuska.cz/pp/letenky.php?prodejce=C001967&amp;specnab=1" class="button secondary" target="_blank" rel="noopener">See offers<span class="material-symbols-outlined" aria-hidden="true">arrow_outward</span></a>
       </div>
@@ -345,8 +474,9 @@
      MARV Travel – page scripts (no external libraries)
      1. Topbar shadow on scroll
      2. Footer year
-     3. Animated counters
-     4. Contact form: honeypot + time gate + reCAPTCHA v3 + fetch to Make
+     3. Scroll reveal
+     4. Animated counters
+     5. Contact form: honeypot + time gate + reCAPTCHA v3 + fetch to Make
      ========================================================================== */
   (function () {
     'use strict';
@@ -360,6 +490,7 @@
     };
 
     var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var hasIO = 'IntersectionObserver' in window;
 
     /* ---------- 1. Topbar ---------- */
     var topbar = document.getElementById('mt-topbar');
@@ -375,7 +506,50 @@
     var year = document.getElementById('footer-year');
     if (year) year.textContent = String(new Date().getFullYear());
 
-    /* ---------- 3. Counters ---------- */
+    /* ---------- 3. Scroll reveal ---------- */
+    if (hasIO && !reduceMotion) {
+      var pending = Array.prototype.slice.call(document.querySelectorAll('.mt .section-head, .mt .grid-3 > .bento, .trust-strip li, .footer-grid > *'));
+      var reveal = function (el) {
+        el.classList.add('in');
+        var i = pending.indexOf(el);
+        if (i > -1) pending.splice(i, 1);
+        revealIo.unobserve(el);
+      };
+      var revealIo = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) { if (entry.isIntersecting) reveal(entry.target); });
+      }, { threshold: 0, rootMargin: '0px 0px -8% 0px' });
+      pending.forEach(function (el) {
+        // Stagger siblings inside the same grid
+        var idx = el.parentNode ? Array.prototype.indexOf.call(el.parentNode.children, el) : 0;
+        el.style.setProperty('--d', (Math.min(idx, 4) * 0.08) + 's');
+        el.classList.add('reveal');
+        revealIo.observe(el);
+      });
+      // Safety net: anything scrolled past (anchor jumps, fast scrolling) is revealed as well.
+      var sweep = function () {
+        var limit = window.innerHeight * 0.92;
+        pending.slice().forEach(function (el) { if (el.getBoundingClientRect().top < limit) reveal(el); });
+      };
+      window.addEventListener('scroll', sweep, { passive: true });
+      window.addEventListener('resize', sweep);
+      setTimeout(sweep, 300);
+    }
+
+    /* ---------- 3b. Dialogs (privacy policy) ---------- */
+    document.addEventListener('click', function (e) {
+      var opener = e.target.closest('[data-dialog]');
+      if (opener) {
+        var dlg = document.getElementById(opener.getAttribute('data-dialog'));
+        if (dlg && typeof dlg.showModal === 'function') { e.preventDefault(); dlg.showModal(); }
+        return;
+      }
+      var closer = e.target.closest('[data-dialog-close]');
+      if (closer) { closer.closest('dialog').close(); return; }
+      // click on the backdrop (outside .dialog-inner) closes
+      if (e.target.tagName === 'DIALOG') e.target.close();
+    });
+
+    /* ---------- 4. Counters ---------- */
     var counters = document.querySelectorAll('[data-count]');
     if (counters.length) {
       var runCounter = function (el) {
@@ -393,7 +567,7 @@
         };
         requestAnimationFrame(step);
       };
-      if ('IntersectionObserver' in window) {
+      if (hasIO) {
         var io = new IntersectionObserver(function (entries) {
           entries.forEach(function (entry) {
             if (entry.isIntersecting) { runCounter(entry.target); io.unobserve(entry.target); }
@@ -405,7 +579,7 @@
       }
     }
 
-    /* ---------- 4. Contact form ---------- */
+    /* ---------- 5. Contact form ---------- */
     var form = document.getElementById('contact-form');
     if (!form) return;
 
@@ -436,7 +610,7 @@
       return recaptchaPromise;
     }
     form.addEventListener('focusin', loadRecaptcha, { once: true });
-    if ('IntersectionObserver' in window) {
+    if (hasIO) {
       var formIo = new IntersectionObserver(function (entries) {
         if (entries.some(function (e) { return e.isIntersecting; })) { loadRecaptcha(); formIo.disconnect(); }
       }, { rootMargin: '400px 0px' });
@@ -452,7 +626,7 @@
     function setBusy(busy) {
       submitButton.disabled = busy;
       submitButton.setAttribute('aria-busy', busy ? 'true' : 'false');
-      btnLabel.textContent = busy ? 'Sending…' : 'Send enquiry';
+      btnLabel.textContent = busy ? 'Sending…' : 'Request a proposal';
     }
 
     function clearAlert() {
@@ -477,7 +651,7 @@
         '<div class="form-success" role="status">' +
           '<span class="icon-dot"><span class="material-symbols-outlined" aria-hidden="true">check_circle</span></span>' +
           '<h3>Thank you' + (first ? ', ' + escapeHtml(first) : '') + '!</h3>' +
-          '<p class="muted measure">Your enquiry is on its way. We usually reply within one business day. If it is urgent, call us on <a href="tel:+420777333950">+420&nbsp;777&nbsp;333&nbsp;950</a>.</p>' +
+          '<p class="muted measure">Your request is on its way. We usually reply within one business day. If it is urgent, call us on <a href="tel:+420777333950">+420&nbsp;777&nbsp;333&nbsp;950</a>.</p>' +
         '</div>';
       wrap.scrollIntoView({ block: 'nearest', behavior: reduceMotion ? 'auto' : 'smooth' });
     }
@@ -518,7 +692,7 @@
       if (elapsed < CONFIG.minFillTimeMs && !softChecked) {
         // Suspiciously fast. A human just clicks again; most scripts never do.
         softChecked = true;
-        showAlert('That was quick! Please double-check your details and click "Send enquiry" once more.', 'error');
+        showAlert('That was quick! Please double-check your details and click "Request a proposal" once more.', 'error');
         return;
       }
 

@@ -11,12 +11,12 @@ hidden with CSS and the visible page is built from the snippets in this repo.
 | `home.html` | Homepage → **page content** (`<main>`) | All sections, contact form and the page script. |
 | `footer.html` | **Footer box** (`#box-custom-footer`) | Footer. |
 | `style.css` | **Style 3** (`/style/3/`) | The only stylesheet we own. Loads after the theme. |
-| `privacy-policy.html` | New page **Privacy policy**, slug `privacy-policy` | Linked from the form note and the footer. |
 
-Deploy = copy-paste each file into its inPage field. The four homepage files must be deployed
-together (the HTML uses classes that only exist in the new CSS). inPage's `custom_header` is
-left alone (it is used for SEO); everything that would normally sit in `<head>` is at the top
-of `hero.html`.
+Deploy = copy-paste each file into its inPage field. The four files must be deployed together
+(the HTML uses classes that only exist in the new CSS). inPage's `custom_header` is left alone
+(it is used for SEO); everything that would normally sit in `<head>` is at the top of
+`hero.html`. The privacy policy is a `<dialog>` inside `home.html` (the inPage plan allows
+only three pages), opened by the links in the form note and the footer.
 
 ## What the page script does (`home.html`, bottom)
 
@@ -24,8 +24,9 @@ No external libraries any more (PureCounter and the Booking.com affiliate script
 
 1. Topbar gets a shadow after scrolling.
 2. Footer year is set automatically.
-3. Counters animate when scrolled into view (`data-count` / `data-suffix`).
-4. Contact form:
+3. Scroll reveal (fade-up of section heads and cards) and the privacy dialog.
+4. Counters animate when scrolled into view (`data-count` / `data-suffix`).
+5. Contact form:
    * native validation with visible labels,
    * **honeypot** field `contact_time` (off-screen; bots fill it, humans can't),
    * **time gate**: a submit faster than 4 s after page load gets a "click once more" notice
@@ -73,3 +74,22 @@ the form and redirect the page to `/#contact`). Also remove `/search/`, `/site-m
 The audit harness used during development lives outside the repo (Playwright rendering the
 live page with the local snippets swapped in). To reproduce: fetch `https://www.marvtravel.com/`,
 replace the three boxes and `/style/3/` with the local files, open in a browser.
+
+## SEO – what is in the code and what lives in inPage settings
+
+In the code (this repo): one `<h1>`, real `<h2>` section titles with B2B keywords (incoming
+travel, Czech Republic, Central Europe, tour operators, DMC services), destination chips,
+`alt` texts, image dimensions, canonical link, `TravelAgency` JSON-LD (address, geo, VAT ID,
+ACK membership, founder, services), fast fonts, no third-party scripts before interaction.
+
+In inPage settings (cannot be set from the repo):
+
+| Setting | Recommended value |
+| --- | --- |
+| Title | `MARV Travel – Incoming Travel Partner for the Czech Republic & Central Europe` |
+| Meta description | `Prague-based incoming travel company with 30+ years of experience. Tailor-made programmes, hotels, transfers and guides for tour operators, agencies and corporate clients. Licensed & insured, ACK ČR member.` |
+| OG image | a 1200×630 photo (Prague skyline or the hero), not the logo |
+| Schema phone | the same number as on the page (+420 777 333 950) |
+| Sitemap | only the homepage; the theme pages `/search/`, `/site-map/`, `/photo-galleries/` should not be listed |
+| `/contact-form/` | unpublish (spam source, duplicate content, page title "Hero sekce") |
+
