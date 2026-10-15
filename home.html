@@ -97,7 +97,7 @@
       </div>
 
       <div class="bento column left lift col-3">
-        <h3 class="m-b-1">How we work with partners</h3>
+        <h3 class="m-b-1">How we work</h3>
         <ul class="feature-list">
           <li>
             <span class="icon-dot"><span class="material-symbols-outlined" aria-hidden="true">account_tree</span></span>
@@ -128,27 +128,71 @@
       <div><p class="section-label">Our services</p></div>
       <div class="section-body">
         <h2>Incoming &amp;&nbsp;Outgoing Travel</h2>
-        <p class="lead measure">Two lines of business, one standard of care. We know the hotels, the guides and the roads, and we answer personally.</p>
+        <p class="lead measure">Two directions, one standard of care. Partners send their clients to us; our own clients travel out with us. Prague is the hub for both.</p>
       </div>
     </div>
 
-    <div class="grid-3 m-b-1">
-      <div class="bento column left span-2 lift">
-        <h3 class="m-b-1">Incoming travel to Central Europe</h3>
-        <p class="muted">Destination services for tour operators, travel agencies and companies: tailor-made itineraries for groups and individual travellers, hotel booking, private transfers and limousine service, licensed guides, sightseeing, gastronomy and cultural experiences, corporate events and incentives. From Prague across the Czech Republic to Vienna, Budapest, Bratislava and Kraków.</p>
-        <div class="chips" aria-label="Destinations">
-          <span class="chip">Prague</span><span class="chip">Český Krumlov</span><span class="chip">Karlovy Vary</span><span class="chip">Brno</span><span class="chip">Vienna</span><span class="chip">Budapest</span><span class="chip">Bratislava</span><span class="chip">Kraków</span><span class="chip">Dresden</span>
+    <div class="routes">
+
+        <div class="bento route-half incoming">
+          <span class="route-tag"><span class="material-symbols-outlined" aria-hidden="true">flight_land</span>Incoming</span>
+          <h3>To the Czech Republic &amp; Central Europe</h3>
+          <p class="muted">Destination services for tour operators, travel agencies and companies that send their clients to us.</p>
+          <ul>
+            <li>Tailor-made itineraries for groups and individual travellers</li>
+            <li>Hotel booking, private transfers and limousine service</li>
+            <li>Licensed guides, sightseeing, gastronomy and cultural experiences</li>
+            <li>Corporate events, incentives and conferences</li>
+          </ul>
+          <div class="chips" aria-label="Destinations">
+            <span class="chip">Prague</span><span class="chip">Český Krumlov</span><span class="chip">Karlovy Vary</span><span class="chip">Brno</span><span class="chip">Vienna</span><span class="chip">Budapest</span><span class="chip">Bratislava</span><span class="chip">Kraków</span><span class="chip">Dresden</span>
+          </div>
         </div>
-      </div>
-      <div class="bento icon-tile column center ratio-square mobile-hide" aria-hidden="true"><span class="material-symbols-outlined icon-big gradient text">explore</span></div>
-    </div>
 
-    <div class="grid-3">
-      <div class="bento icon-tile column center ratio-square mobile-hide" aria-hidden="true"><span class="material-symbols-outlined icon-big gradient text">airplane_ticket</span></div>
-      <div class="bento column left span-2 lift">
-        <h3 class="m-b-1">Outgoing travel worldwide</h3>
-        <p class="muted">For private and corporate clients: tailor-made holidays and business trips anywhere in the world. Flights, hotels, itineraries and support while you are away, arranged by people you can call.</p>
-      </div>
+        <div class="route-axis" aria-hidden="true">
+          <!-- desktop: vertical axis, routes flow into Prague from the left and out to the right -->
+          <svg class="vertical" viewBox="0 0 132 600" preserveAspectRatio="xMidYMid meet">
+            <path class="lane in" d="M -4 150 C 48 150, 50 300, 66 300"/>
+            <path class="lane in" d="M -4 232 C 42 232, 46 300, 66 300"/>
+            <path class="lane out" d="M 66 300 C 86 300, 90 368, 136 368"/>
+            <path class="lane out" d="M 66 300 C 82 300, 84 450, 136 450"/>
+            <circle class="hub-ring" cx="66" cy="300" r="12"/>
+            <circle class="hub-ring second" cx="66" cy="300" r="12"/>
+            <circle class="hub-dot" cx="66" cy="300" r="6"/>
+            <text class="hub-label" x="66" y="336" text-anchor="middle">Prague</text>
+            <path class="plane in" transform="scale(0.75) translate(-12 -12)" d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/>
+            <path class="plane out" transform="scale(0.75) translate(-12 -12)" d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/>
+          </svg>
+          <!-- mobile: horizontal axis -->
+          <svg class="horizontal" viewBox="0 0 600 120" preserveAspectRatio="xMidYMid meet">
+            <path class="lane in" d="M -4 30 C 160 30, 170 60, 300 60"/>
+            <path class="lane in" d="M -4 60 C 160 60, 170 60, 300 60"/>
+            <path class="lane out" d="M 300 60 C 430 60, 440 60, 604 60"/>
+            <path class="lane out" d="M 300 60 C 430 60, 440 90, 604 90"/>
+            <circle class="hub-ring" cx="300" cy="60" r="12"/>
+            <circle class="hub-ring second" cx="300" cy="60" r="12"/>
+            <circle class="hub-dot" cx="300" cy="60" r="6"/>
+            <text class="hub-label" x="300" y="96" text-anchor="middle">Prague</text>
+            <path class="plane in" transform="scale(0.75) translate(-12 -12)" d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/>
+            <path class="plane out" transform="scale(0.75) translate(-12 -12)" d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/>
+          </svg>
+        </div>
+
+        <div class="bento route-half outgoing">
+          <span class="route-tag"><span class="material-symbols-outlined" aria-hidden="true">flight_takeoff</span>Outgoing</span>
+          <h3>From Prague to the world</h3>
+          <p class="muted">For private and corporate clients who travel with us: tailor-made holidays and business trips anywhere in the world.</p>
+          <ul>
+            <li>Flights, hotels and complete itineraries</li>
+            <li>Business travel and company retreats</li>
+            <li>Support while you are away, from people you can call</li>
+          </ul>
+          <div class="chips" aria-label="Regions">
+            <span class="chip">Europe</span><span class="chip">Middle East</span><span class="chip">Asia</span><span class="chip">Americas</span><span class="chip">Africa &amp; Indian Ocean</span>
+          </div>
+          <p class="small muted">Recent journeys: Jordan, Thailand, Italy and the Alps.</p>
+        </div>
+
     </div>
   </div>
 </section>
@@ -207,20 +251,20 @@
   <div class="gallery" aria-label="Photos from our journeys">
     <div class="gallery-track">
       <div class="gallery-slide-left">
-        <img src="/picture/3/petra-jpeg/" alt="The Treasury carved into rose-coloured rock in Petra, Jordan" width="519" height="346" decoding="async">
-        <img src="/picture/3/dead-sea-jpeg/" alt="Turquoise water and salt formations at the Dead Sea" width="519" height="346" decoding="async">
-        <img src="/picture/3/koh-chang-jpg/" alt="Tropical beach on Koh Chang island, Thailand" width="1600" height="1200" decoding="async">
-        <img src="/picture/3/petra-jpeg/" alt="" width="519" height="346" decoding="async">
-        <img src="/picture/3/dead-sea-jpeg/" alt="" width="519" height="346" decoding="async">
-        <img src="/picture/3/koh-chang-jpg/" alt="" width="1600" height="1200" decoding="async">
+        <figure><img src="/picture/3/petra-jpeg/" alt="The Treasury carved into rose-coloured rock in Petra, Jordan" width="519" height="346" decoding="async"><figcaption><strong>Petra</strong><span>Jordan</span></figcaption></figure>
+        <figure><img src="/picture/3/dead-sea-jpeg/" alt="Turquoise water and salt formations at the Dead Sea" width="519" height="346" decoding="async"><figcaption><strong>Dead Sea</strong><span>Jordan</span></figcaption></figure>
+        <figure><img src="/picture/3/koh-chang-jpg/" alt="Tropical beach on Koh Chang island, Thailand" width="1600" height="1200" decoding="async"><figcaption><strong>Koh Chang</strong><span>Thailand</span></figcaption></figure>
+        <figure><img src="/picture/3/petra-jpeg/" alt="" width="519" height="346" decoding="async"><figcaption><strong>Petra</strong><span>Jordan</span></figcaption></figure>
+        <figure><img src="/picture/3/dead-sea-jpeg/" alt="" width="519" height="346" decoding="async"><figcaption><strong>Dead Sea</strong><span>Jordan</span></figcaption></figure>
+        <figure><img src="/picture/3/koh-chang-jpg/" alt="" width="1600" height="1200" decoding="async"><figcaption><strong>Koh Chang</strong><span>Thailand</span></figcaption></figure>
       </div>
       <div class="gallery-slide-left" aria-hidden="true">
-        <img src="/picture/3/petra-jpeg/" alt="" width="519" height="346" decoding="async">
-        <img src="/picture/3/dead-sea-jpeg/" alt="" width="519" height="346" decoding="async">
-        <img src="/picture/3/koh-chang-jpg/" alt="" width="1600" height="1200" decoding="async">
-        <img src="/picture/3/petra-jpeg/" alt="" width="519" height="346" decoding="async">
-        <img src="/picture/3/dead-sea-jpeg/" alt="" width="519" height="346" decoding="async">
-        <img src="/picture/3/koh-chang-jpg/" alt="" width="1600" height="1200" decoding="async">
+        <figure><img src="/picture/3/petra-jpeg/" alt="" width="519" height="346" decoding="async"><figcaption><strong>Petra</strong><span>Jordan</span></figcaption></figure>
+        <figure><img src="/picture/3/dead-sea-jpeg/" alt="" width="519" height="346" decoding="async"><figcaption><strong>Dead Sea</strong><span>Jordan</span></figcaption></figure>
+        <figure><img src="/picture/3/koh-chang-jpg/" alt="" width="1600" height="1200" decoding="async"><figcaption><strong>Koh Chang</strong><span>Thailand</span></figcaption></figure>
+        <figure><img src="/picture/3/petra-jpeg/" alt="" width="519" height="346" decoding="async"><figcaption><strong>Petra</strong><span>Jordan</span></figcaption></figure>
+        <figure><img src="/picture/3/dead-sea-jpeg/" alt="" width="519" height="346" decoding="async"><figcaption><strong>Dead Sea</strong><span>Jordan</span></figcaption></figure>
+        <figure><img src="/picture/3/koh-chang-jpg/" alt="" width="1600" height="1200" decoding="async"><figcaption><strong>Koh Chang</strong><span>Thailand</span></figcaption></figure>
       </div>
     </div>
   </div>
@@ -304,7 +348,7 @@
     <div class="grid-3 contact-grid">
 
       <!-- Form -->
-      <div class="bento form-card column left span-2">
+      <div class="bento form-card accent column left span-2">
         <div id="contact-form-wrap" class="w-100">
           <form class="form-grid" id="contact-form" action="#contact" method="post" novalidate>
             <div class="form-field">
@@ -343,7 +387,7 @@
             <input type="hidden" name="source" value="www.marvtravel.com/#contact">
 
             <div class="form-footer">
-              <button class="button primary" type="submit" id="submitButton"><span class="btn-label">Request a proposal</span><span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span></button>
+              <button class="button light" type="submit" id="submitButton"><span class="btn-label">Request a proposal</span><span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span></button>
               <p class="form-note">You'll hear back from Jiří personally, usually within one business day. We use your details only to answer your request (<a href="#privacy" data-dialog="privacy-dialog">privacy policy</a>). This site is protected by reCAPTCHA; the Google <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a> and <a href="https://policies.google.com/terms" target="_blank" rel="noopener">Terms of Service</a> apply.</p>
             </div>
           </form>
@@ -508,7 +552,7 @@
 
     /* ---------- 3. Scroll reveal ---------- */
     if (hasIO && !reduceMotion) {
-      var pending = Array.prototype.slice.call(document.querySelectorAll('.mt .section-head, .mt .grid-3 > .bento, .trust-strip li, .footer-grid > *'));
+      var pending = Array.prototype.slice.call(document.querySelectorAll('.mt .section-head, .mt .grid-3 > .bento, .mt .routes > .bento, .trust-strip li, .footer-grid > *'));
       var reveal = function (el) {
         el.classList.add('in');
         var i = pending.indexOf(el);
@@ -548,6 +592,38 @@
       // click on the backdrop (outside .dialog-inner) closes
       if (e.target.tagName === 'DIALOG') e.target.close();
     });
+
+    /* ---------- 3c. Gallery marquee (eases to a stop on hover) ---------- */
+    var gallery = document.querySelector('.gallery');
+    var track = gallery && gallery.querySelector('.gallery-track');
+    var firstSlide = track && track.querySelector('.gallery-slide-left');
+    if (gallery && track && firstSlide && !reduceMotion && window.requestAnimationFrame) {
+      gallery.classList.add('js');
+      var x = 0, speed = 36, targetSpeed = 36, last = null, visible = true; // px per second
+      var loopWidth = function () { return firstSlide.getBoundingClientRect().width; };
+      gallery.addEventListener('pointerenter', function () { targetSpeed = 0; });
+      gallery.addEventListener('pointerleave', function () { targetSpeed = 36; });
+      gallery.addEventListener('focusin', function () { targetSpeed = 0; });
+      gallery.addEventListener('focusout', function () { targetSpeed = 36; });
+      if (hasIO) {
+        new IntersectionObserver(function (entries) { visible = entries[0].isIntersecting; }).observe(gallery);
+      }
+      var tick = function (ts) {
+        if (last === null) last = ts;
+        var dt = Math.min((ts - last) / 1000, 0.05);
+        last = ts;
+        // ease the speed towards the target (≈0.8 s to stop or restart)
+        speed += (targetSpeed - speed) * Math.min(1, dt * 5);
+        if (visible && Math.abs(speed) > 0.05) {
+          x -= speed * dt;
+          var w = loopWidth();
+          if (w > 0 && -x >= w) x += w;
+          track.style.transform = 'translate3d(' + x.toFixed(2) + 'px,0,0)';
+        }
+        requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
+    }
 
     /* ---------- 4. Counters ---------- */
     var counters = document.querySelectorAll('[data-count]');
