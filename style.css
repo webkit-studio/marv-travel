@@ -484,19 +484,31 @@ section > .contain > .row.left {
 
 /* – Section label (pill) – */
 .section-label {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
   font-family: 'Noto Sans', system-ui, sans-serif !important;
   font-size: 12px !important;
   font-weight: 600;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   line-height: 1;
-  color: var(--ink-2);
-  background: var(--paper-2);
-  border: 1px solid var(--line);
-  border-radius: var(--r-pill);
-  padding: 12px 18px;
+  color: var(--ink-3);
+  background: none;
+  border: 0;
+  border-radius: 0;
+  padding: 6px 0;
   margin: 0;
+}
+
+.section-label::before {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--primary);
+  flex: 0 0 auto;
 }
 
 /* – Buttons – */
@@ -599,13 +611,14 @@ section > .contain > .row.left {
   background: var(--paper-2);
   min-height: 100%;
   justify-content: center !important;
-  transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+  transition: transform 0.28s ease, translate 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
 }
 
-.bento.lift:hover {
-  transform: translateY(-4px);
+/* Every card reacts the same way: a 3 px lift and a soft shadow. The border
+   stays. Cards marked .static (hero, form) do not move. */
+.bento:not(.static):hover {
+  translate: 0 -3px;              /* `translate`, not `transform`: the scroll-reveal owns transform */
   box-shadow: var(--shadow-md);
-  border-color: transparent;
 }
 
 .bento.gradient {
@@ -863,28 +876,26 @@ section > .contain > .row.left {
   z-index: 1;
 }
 
-/* Soft haze behind the headline for legibility on any photo */
-.hero > .bento::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 2;
-  background: linear-gradient(100deg, rgba(255, 255, 255, 0.55) 0%, rgba(255, 255, 255, 0.28) 38%, rgba(255, 255, 255, 0) 62%);
-  pointer-events: none;
-}
-
+/* Glass card behind headline, lead and buttons */
 .hero > .bento > .content {
   position: relative;
   z-index: 3;
-  max-width: 640px;
+  max-width: 660px;
+  padding: clamp(28px, 3.4vw, 44px);
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  box-shadow: 0 24px 60px rgba(27, 18, 18, 0.10);
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
 }
 
 .hero .hero-lead {
-  font-size: clamp(17px, 1.4vw, 20px);
+  font-size: clamp(17px, 1.3vw, 19px);
   line-height: 1.55;
   color: var(--ink-2);
   max-width: 34em;
-  margin-bottom: var(--s-5);
+  margin-bottom: var(--s-4);
 }
 
 .hero .hero-actions {
@@ -1000,6 +1011,175 @@ section {
   box-sizing: border-box;
 }
 
+/* Services: one wide card split into Incoming | axis | Outgoing */
+.mt .routes {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 132px minmax(0, 1fr);
+  padding: 0;
+  overflow: hidden;
+  justify-content: stretch !important;
+}
+
+.mt .route-half {
+  padding: clamp(28px, 3.4vw, 44px);
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-3);
+  min-width: 0;
+}
+
+.mt .route-half.incoming {
+  background: linear-gradient(135deg, rgba(227, 111, 69, 0.12) 0%, rgba(227, 111, 69, 0.03) 60%, transparent 100%);
+}
+
+.mt .route-half.outgoing {
+  background: linear-gradient(225deg, rgba(120, 154, 191, 0.14) 0%, rgba(120, 154, 191, 0.04) 60%, transparent 100%);
+}
+
+.mt .route-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  align-self: flex-start;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 8px 12px 8px 10px;
+  border-radius: var(--r-pill);
+  background: var(--paper);
+  border: 1px solid var(--line);
+}
+
+.mt .route-tag .material-symbols-outlined {
+  font-size: 18px;
+  font-variation-settings: 'FILL' 0, 'wght' 500, 'GRAD' 0, 'opsz' 20;
+}
+
+.mt .incoming .route-tag { color: var(--primary-deep); }
+.mt .outgoing .route-tag { color: var(--accent-deep); }
+
+.mt .route-half h3 {
+  margin-top: 4px;
+}
+
+.mt .route-half ul {
+  display: grid;
+  gap: 6px;
+  font-size: 15px;
+  color: var(--ink-2);
+}
+
+.mt .route-half li {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.mt .route-half li::before {
+  content: "";
+  flex: 0 0 auto;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  margin-top: 9px;
+  background: currentColor;
+  opacity: 0.5;
+}
+
+.mt .incoming li::before { background: var(--primary); opacity: 1; }
+.mt .outgoing li::before { background: var(--accent); opacity: 1; }
+
+/* The animated axis between the halves */
+.mt .route-axis {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--paper);
+  border-left: 1px solid var(--line);
+  border-right: 1px solid var(--line);
+}
+
+.mt .route-axis svg {
+  width: 100%;
+  height: 100%;
+  min-height: 420px;
+  display: block;
+  overflow: visible;
+}
+
+.mt .route-axis .horizontal { display: none; }
+
+.mt .route-axis .lane {
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-dasharray: 5 9;
+  animation: laneFlow 1.6s linear infinite;
+}
+
+.mt .route-axis .lane.in { stroke: var(--primary); }
+.mt .route-axis .lane.out { stroke: var(--accent); }
+
+@keyframes laneFlow {
+  to { stroke-dashoffset: -28; }
+}
+
+.mt .route-axis .hub-ring {
+  fill: none;
+  stroke: var(--primary);
+  stroke-width: 1.5;
+  opacity: 0;
+  transform-origin: center;
+  transform-box: fill-box;
+  animation: hubPulse 3.2s ease-out infinite;
+}
+
+.mt .route-axis .hub-ring.second { animation-delay: 1.6s; }
+
+@keyframes hubPulse {
+  0% { transform: scale(0.4); opacity: 0.9; }
+  100% { transform: scale(2.4); opacity: 0; }
+}
+
+.mt .route-axis .hub-dot {
+  fill: var(--ink);
+}
+
+.mt .route-axis .hub-label {
+  font-family: 'Noto Sans', system-ui, sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  fill: var(--ink);
+}
+
+.mt .route-axis .plane {
+  fill: var(--ink);
+  offset-rotate: auto 90deg;      /* the glyph's nose points up; rotate it along the lane */
+  opacity: 0;
+}
+
+.mt .route-axis .plane.in {
+  offset-path: path('M -4 150 C 48 150, 50 300, 66 300');
+  animation: fly 7s cubic-bezier(0.4, 0.05, 0.6, 0.95) infinite;
+}
+
+.mt .route-axis .plane.out {
+  offset-path: path('M 66 300 C 82 300, 84 450, 136 450');
+  animation: fly 7s cubic-bezier(0.4, 0.05, 0.6, 0.95) 3.5s infinite;
+}
+
+@keyframes fly {
+  0% { offset-distance: 0%; opacity: 0; }
+  8% { opacity: 1; }
+  42% { opacity: 1; }
+  50% { offset-distance: 100%; opacity: 0; }
+  100% { offset-distance: 100%; opacity: 0; }
+}
+
 /* Destination chips */
 .mt .chips {
   display: flex;
@@ -1073,20 +1253,68 @@ section {
   will-change: transform;
 }
 
-.gallery:hover .gallery-slide-left,
-.gallery:focus-within .gallery-slide-left {
+/* CSS fallback only (JS drives the marquee and eases to a stop on hover) */
+.gallery:not(.js):hover .gallery-slide-left {
   animation-play-state: paused;
+}
+
+.gallery.js .gallery-slide-left {
+  animation: none;
+}
+
+.gallery figure {
+  position: relative;
+  flex: 0 0 auto;
+  margin: 0 var(--s-2);
+  padding-bottom: 44px;           /* room for the caption, so the row never jumps */
+  white-space: normal;
 }
 
 .gallery-slide-left img {
   height: clamp(200px, 26vw, 320px);
   width: auto;
   max-width: none;
-  margin: 0 var(--s-2);
   border-radius: var(--r-md);
   object-fit: cover;
-  flex: 0 0 auto;
   background: var(--paper-2);
+  transition: transform 0.5s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.gallery figcaption {
+  position: absolute;
+  left: 4px;
+  right: 4px;
+  bottom: 0;
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  padding-top: 12px;
+  font-size: 14px;
+  color: var(--ink-2);
+  opacity: 0;
+  transform: translateY(-6px);
+  transition: opacity 0.35s ease, transform 0.45s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.gallery figcaption strong {
+  font-family: 'Noto Serif Display', Georgia, serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.gallery figure:hover figcaption,
+.gallery figure:focus-within figcaption {
+  opacity: 1;
+  transform: none;
+}
+
+.gallery figure:hover img {
+  transform: translateY(-4px);
+}
+
+@media (hover: none) {
+  .gallery figcaption { opacity: 1; transform: none; }
 }
 
 /* Testimonials */
@@ -1676,6 +1904,15 @@ footer.footer {
   /* Contact: form and details each take the full width */
   .mt .contact-grid > * { grid-column: 1 / -1; }
 
+  /* Services card stacks: incoming / axis / outgoing */
+  .mt .routes { grid-template-columns: minmax(0, 1fr); }
+  .mt .route-axis { border: 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); min-height: 120px; }
+  .mt .route-axis svg { min-height: 0; height: 120px; }
+  .mt .route-axis .vertical { display: none; }
+  .mt .route-axis .horizontal { display: block; }
+  .mt .route-axis .plane.in { offset-path: path('M -4 30 C 160 30, 170 60, 300 60'); }
+  .mt .route-axis .plane.out { offset-path: path('M 300 60 C 430 60, 440 90, 604 90'); }
+
   .bento { padding: var(--s-4); }
 
   .trust-strip li { font-size: 13px; }
@@ -1717,8 +1954,9 @@ footer.footer {
     padding: 12vw 7vw 40vw;
   }
 
-  .hero > .bento::before {
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.35) 50%, rgba(255, 255, 255, 0) 80%);
+  .hero > .bento > .content {
+    padding: 22px;
+    border-radius: 22px;
   }
 
   .hero > .hero-plane {
@@ -1824,16 +2062,23 @@ footer.footer {
   }
 
   .hero > .hero-plane,
-  .hero > .bento > .content > * {
+  .hero > .bento > .content > *,
+  .mt .route-axis .lane,
+  .mt .route-axis .hub-ring,
+  .mt .route-axis .plane {
     animation: none;
   }
+
+  .mt .route-axis .plane { opacity: 0; }
+  .mt .route-axis .hub-ring { opacity: 0.4; }
+
+  .bento:not(.static):hover { translate: none; }
 
   .mt .reveal {
     opacity: 1;
     transform: none;
   }
 
-  .bento.lift:hover,
   .button.primary:hover {
     transform: none;
   }
