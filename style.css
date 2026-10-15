@@ -858,7 +858,7 @@ section > .contain > .row.left {
   z-index: 1;
   flex: 1 1 auto;
   min-height: min(78vh, 760px);
-  padding: clamp(28px, 6.5vw, 96px);
+  padding: clamp(28px, 6.5vw, 96px) max(clamp(28px, 6.5vw, 96px), calc((100% - var(--contain)) / 2));
   border-radius: clamp(28px, 6vw, 80px);
   align-items: flex-start;
   justify-content: center !important;
@@ -876,18 +876,20 @@ section > .contain > .row.left {
   z-index: 1;
 }
 
-/* Glass card behind headline, lead and buttons */
+/* Soft haze behind the headline for legibility on any photo */
+.hero > .bento::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: linear-gradient(100deg, rgba(255, 255, 255, 0.55) 0%, rgba(255, 255, 255, 0.28) 38%, rgba(255, 255, 255, 0) 62%);
+  pointer-events: none;
+}
+
 .hero > .bento > .content {
   position: relative;
   z-index: 3;
-  max-width: 660px;
-  padding: clamp(28px, 3.4vw, 44px);
-  border-radius: 28px;
-  background: rgba(255, 255, 255, 0.72);
-  border: 1px solid rgba(255, 255, 255, 0.65);
-  box-shadow: 0 24px 60px rgba(27, 18, 18, 0.10);
-  backdrop-filter: blur(14px) saturate(140%);
-  -webkit-backdrop-filter: blur(14px) saturate(140%);
+  max-width: 640px;
 }
 
 .hero .hero-lead {
@@ -1011,29 +1013,28 @@ section {
   box-sizing: border-box;
 }
 
-/* Services: one wide card split into Incoming | axis | Outgoing */
+/* Services: Incoming card | frameless animated axis | Outgoing card */
 .mt .routes {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 132px minmax(0, 1fr);
-  padding: 0;
-  overflow: hidden;
-  justify-content: stretch !important;
+  gap: 0 var(--s-4);
+  align-items: stretch;
 }
 
 .mt .route-half {
-  padding: clamp(28px, 3.4vw, 44px);
   display: flex;
   flex-direction: column;
   gap: var(--s-3);
   min-width: 0;
+  justify-content: flex-start !important;
 }
 
 .mt .route-half.incoming {
-  background: linear-gradient(135deg, rgba(227, 111, 69, 0.12) 0%, rgba(227, 111, 69, 0.03) 60%, transparent 100%);
+  background: linear-gradient(135deg, rgba(227, 111, 69, 0.14) 0%, rgba(227, 111, 69, 0.04) 60%, var(--paper-2) 100%);
 }
 
 .mt .route-half.outgoing {
-  background: linear-gradient(225deg, rgba(120, 154, 191, 0.14) 0%, rgba(120, 154, 191, 0.04) 60%, transparent 100%);
+  background: linear-gradient(225deg, rgba(120, 154, 191, 0.16) 0%, rgba(120, 154, 191, 0.05) 60%, var(--paper-2) 100%);
 }
 
 .mt .route-tag {
@@ -1090,15 +1091,16 @@ section {
 .mt .incoming li::before { background: var(--primary); opacity: 1; }
 .mt .outgoing li::before { background: var(--accent); opacity: 1; }
 
-/* The animated axis between the halves */
+.mt .route-half .chips { margin-top: var(--s-1); }
+.mt .route-half .small { margin-top: auto; padding-top: var(--s-3); }
+
+/* The animated axis between the cards: no frame, just the lanes and the hub */
 .mt .route-axis {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--paper);
-  border-left: 1px solid var(--line);
-  border-right: 1px solid var(--line);
+  margin: 0 calc(-1 * var(--s-4));   /* lanes run right up to the cards' edges */
 }
 
 .mt .route-axis svg {
@@ -1277,7 +1279,6 @@ section {
   border-radius: var(--r-md);
   object-fit: cover;
   background: var(--paper-2);
-  transition: transform 0.5s cubic-bezier(0.2, 0.7, 0.2, 1);
 }
 
 .gallery figcaption {
@@ -1309,9 +1310,6 @@ section {
   transform: none;
 }
 
-.gallery figure:hover img {
-  transform: translateY(-4px);
-}
 
 @media (hover: none) {
   .gallery figcaption { opacity: 1; transform: none; }
@@ -1459,7 +1457,90 @@ body:has(dialog[open]) {
 .bento.form-card {
   justify-content: flex-start !important;
   background: var(--paper);
-  box-shadow: var(--shadow-sm);
+}
+
+/* Form card variants: .accent = brand gradient, .dark = ink. Labels, inputs,
+   note and button adapt; the Make/JS logic is untouched. */
+.bento.form-card.accent {
+  background: var(--gradient);
+  border-color: transparent;
+  color: #fff;
+}
+
+.bento.form-card.dark {
+  background: var(--ink);
+  border-color: transparent;
+  color: #fff;
+}
+
+.mt .form-card.accent .form-field label,
+.mt .form-card.dark .form-field label {
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.mt .form-card.accent .form-field label .optional,
+.mt .form-card.dark .form-field label .optional {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.mt .form-card.accent .form-field input,
+.mt .form-card.accent .form-field textarea,
+.mt .form-card.dark .form-field input,
+.mt .form-card.dark .form-field textarea {
+  background: #fff;
+  border-color: transparent;
+  color: var(--ink);
+}
+
+.mt .form-card.accent .form-field input:focus,
+.mt .form-card.accent .form-field textarea:focus,
+.mt .form-card.dark .form-field input:focus,
+.mt .form-card.dark .form-field textarea:focus {
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.35);
+}
+
+.mt .form-card.dark .form-field input:focus,
+.mt .form-card.dark .form-field textarea:focus {
+  box-shadow: 0 0 0 4px rgba(227, 111, 69, 0.45);
+}
+
+.mt .form-card.accent .form-note,
+.mt .form-card.dark .form-note {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.mt .form-card.accent .form-note a,
+.mt .form-card.dark .form-note a {
+  color: #fff;
+}
+
+.mt .form-card.accent .form-success h3,
+.mt .form-card.accent .form-success p,
+.mt .form-card.dark .form-success h3,
+.mt .form-card.dark .form-success p {
+  color: #fff;
+}
+
+.mt .form-card.accent .form-success a,
+.mt .form-card.dark .form-success a {
+  color: #fff;
+}
+
+/* White button (used on the accent form card) */
+.button.light {
+  color: var(--ink) !important;
+  background: #fff;
+  box-shadow: 0 6px 18px rgba(27, 18, 18, 0.18);
+}
+
+.button.light:hover,
+.button.light:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 26px rgba(27, 18, 18, 0.24);
+}
+
+.mt .form-card.dark .button.light {
+  box-shadow: none;
 }
 
 .mt .form-intro {
@@ -1904,9 +1985,9 @@ footer.footer {
   /* Contact: form and details each take the full width */
   .mt .contact-grid > * { grid-column: 1 / -1; }
 
-  /* Services card stacks: incoming / axis / outgoing */
-  .mt .routes { grid-template-columns: minmax(0, 1fr); }
-  .mt .route-axis { border: 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); min-height: 120px; }
+  /* Services stack: incoming card / axis / outgoing card */
+  .mt .routes { grid-template-columns: minmax(0, 1fr); gap: 0; }
+  .mt .route-axis { margin: 0; min-height: 120px; }
   .mt .route-axis svg { min-height: 0; height: 120px; }
   .mt .route-axis .vertical { display: none; }
   .mt .route-axis .horizontal { display: block; }
@@ -1954,9 +2035,8 @@ footer.footer {
     padding: 12vw 7vw 40vw;
   }
 
-  .hero > .bento > .content {
-    padding: 22px;
-    border-radius: 22px;
+  .hero > .bento::before {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.35) 50%, rgba(255, 255, 255, 0) 80%);
   }
 
   .hero > .hero-plane {

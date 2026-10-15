@@ -132,10 +132,9 @@
       </div>
     </div>
 
-    <div class="grid-3">
-      <div class="bento routes span-3">
+    <div class="routes">
 
-        <div class="route-half incoming">
+        <div class="bento route-half incoming">
           <span class="route-tag"><span class="material-symbols-outlined" aria-hidden="true">flight_land</span>Incoming</span>
           <h3>To the Czech Republic &amp; Central Europe</h3>
           <p class="muted">Destination services for tour operators, travel agencies and companies that send their clients to us.</p>
@@ -179,7 +178,7 @@
           </svg>
         </div>
 
-        <div class="route-half outgoing">
+        <div class="bento route-half outgoing">
           <span class="route-tag"><span class="material-symbols-outlined" aria-hidden="true">flight_takeoff</span>Outgoing</span>
           <h3>From Prague to the world</h3>
           <p class="muted">For private and corporate clients who travel with us: tailor-made holidays and business trips anywhere in the world.</p>
@@ -188,9 +187,12 @@
             <li>Business travel and company retreats</li>
             <li>Support while you are away, from people you can call</li>
           </ul>
+          <div class="chips" aria-label="Regions">
+            <span class="chip">Europe</span><span class="chip">Middle East</span><span class="chip">Asia</span><span class="chip">Americas</span><span class="chip">Africa &amp; Indian Ocean</span>
+          </div>
+          <p class="small muted">Recent journeys: Jordan, Thailand, Italy and the Alps.</p>
         </div>
 
-      </div>
     </div>
   </div>
 </section>
@@ -346,7 +348,7 @@
     <div class="grid-3 contact-grid">
 
       <!-- Form -->
-      <div class="bento form-card static column left span-2">
+      <div class="bento form-card accent column left span-2">
         <div id="contact-form-wrap" class="w-100">
           <form class="form-grid" id="contact-form" action="#contact" method="post" novalidate>
             <div class="form-field">
@@ -385,7 +387,7 @@
             <input type="hidden" name="source" value="www.marvtravel.com/#contact">
 
             <div class="form-footer">
-              <button class="button primary" type="submit" id="submitButton"><span class="btn-label">Request a proposal</span><span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span></button>
+              <button class="button light" type="submit" id="submitButton"><span class="btn-label">Request a proposal</span><span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span></button>
               <p class="form-note">You'll hear back from Jiří personally, usually within one business day. We use your details only to answer your request (<a href="#privacy" data-dialog="privacy-dialog">privacy policy</a>). This site is protected by reCAPTCHA; the Google <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a> and <a href="https://policies.google.com/terms" target="_blank" rel="noopener">Terms of Service</a> apply.</p>
             </div>
           </form>
@@ -550,7 +552,7 @@
 
     /* ---------- 3. Scroll reveal ---------- */
     if (hasIO && !reduceMotion) {
-      var pending = Array.prototype.slice.call(document.querySelectorAll('.mt .section-head, .mt .grid-3 > .bento, .trust-strip li, .footer-grid > *'));
+      var pending = Array.prototype.slice.call(document.querySelectorAll('.mt .section-head, .mt .grid-3 > .bento, .mt .routes > .bento, .trust-strip li, .footer-grid > *'));
       var reveal = function (el) {
         el.classList.add('in');
         var i = pending.indexOf(el);
